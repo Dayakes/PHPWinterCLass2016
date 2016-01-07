@@ -14,19 +14,23 @@
              * var_dump
              * isset
              */
-            $str = 'hello';            
-            echo strtoupper($str);
-        
-            $randColor = '#'.strtoupper(dechex(rand(0x000000, 0xFFFFFF)));
-
-            echo $randColor;    
-            
-            var_dump($randColor);
-            
-            if ( isset($randColor) ) {
-                
-            }
-            
+            $str = 'hello'; 
         ?>
+        <?php
+            echo strtoupper($str);
+        ?>
+        <?php 
+            $randColor = '#'.strtoupper(dechex(rand(0x000000, 0xFFFFFF)));
+        ?>
+        <?php
+            echo $randColor;  
+        ?>
+        <?php
+            var_dump($randColor);
+        ?>
+        <?php if ( isset($randColor) ) : ?>  
+                <span style="background-color:<?php echo $randColor; ?>"><?php echo $randColor; ?> </span>
+        <?php endif; ?>
+        
     </body>
 </html>
