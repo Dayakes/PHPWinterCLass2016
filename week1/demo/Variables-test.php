@@ -15,7 +15,7 @@ and open the template in the editor.
         $myvar2 = 'Bells';
         ?>
         <h1>
-            <?php echo $myvar, $myvar2;
+            <?php echo $myvar . ' ' . $myvar2;
             ?>
         </h1>
     </body>
