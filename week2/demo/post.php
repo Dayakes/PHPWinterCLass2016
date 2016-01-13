@@ -22,16 +22,24 @@
          */
         $dataoneVal = filter_input(INPUT_POST, 'dataone');
         $datatwoVal = filter_input(INPUT_POST, 'datatwo');
+        $dateVal = filter_input(INPUT_POST, 'datathree');
+        
+        //$_POST['dataone']
+        
+        echo $dateVal;
         echo $dataoneVal;
         echo $datatwoVal;
         
         ?>
         <form method="post" action="#">
             
-            Data one <input type="text" value="" name="dataone" />
+            Data one <input type="text" value="<?php echo $dataoneVal ?>" name="dataone" />
             <br />
-            Data two <input type="text" value="" name="datatwo" />
+            Data two <input type="text" value="<?php echo $datatwoVal ?>" name="datatwo" />
             <br />
+            Data three <input type="date" value="<?php echo $dateVal ?>" name="datathree" />
+            <br />
+            
             
             <input type="submit" value="Submit" />
             
