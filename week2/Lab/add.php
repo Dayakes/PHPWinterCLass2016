@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-        include './dbconnect.php';
+        include './db-connect.php';
         include './functions.php';
 
         $results = '';
@@ -14,14 +14,19 @@
         if (isPostRequest()) {
             $db = getDatabase();
 
-            $stmt = $db->prepare("INSERT INTO test SET dataone = :dataone, datatwo = :datatwo");
+            $stmt = $db->prepare("INSERT INTO actors SET firstname = :firstname, lastname = :lastname, "
+                    . "dob = :dob, height = :height");
 
-            $dataone = filter_input(INPUT_POST, 'dataone');
-            $datatwo = filter_input(INPUT_POST, 'datatwo');
+            $firstname = filter_input(INPUT_POST, 'firstname');
+            $lastname = filter_input(INPUT_POST, 'lastname');
+            $dob= filter_input(INPUT_POST, 'dob');
+            $height = filter_input(INPUT_POST, 'height');
 
             $binds = array(
-                ":dataone" => $dataone,
-                ":datatwo" => $datatwo
+                ":firstname" => $firstname,
+                ":lastname" => $lastname,
+                ":dob" => $dob,
+                ":height" => $height
             );
 
             /*
@@ -39,11 +44,13 @@
         <h1><?php echo $results; ?></h1>
 
         <form method="post" action="#">            
-            Data one <input type="text" value="" name="dataone" />
+            Actor's first name <input type="text" value="" name="firstname" />
             <br />
-            Data two <input type="text" value="" name="datatwo" />
+            Actor's last name <input type="text" value="" name="lastname" />
             <br />
-            Date <input type="date" value="" name="date" />
+            Actor's DOB <input type="date" value="" name="dob" />
+            <br />
+            Actor's Height <input type="text" value="" name="height" />
             <br />
 
             <input type="submit" value="Submit" />
