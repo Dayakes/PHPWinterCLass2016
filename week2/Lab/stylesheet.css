@@ -1,0 +1,25 @@
+
+
+table, th, td {
+    border: 1px solid black;
+    width: 30%;
+    padding: 5px;
+}
+div.fname {
+    color:red;
+    margin: 5px;
+}
+
+div.lname {
+    color: red;
+    margin: 5px;
+}
+
+div.dob {
+    color:purple;
+    margin: 5px;
+}
+div.height {
+    color:purple;
+    margin: 5px;
+}
