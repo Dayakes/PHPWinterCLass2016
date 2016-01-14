@@ -5,6 +5,7 @@
         <title></title>
     </head>
     <body>
+        <a href="add.php">Click here to add more actors to the database!</a>
         <?php
         /*
          * include the data base connect file
@@ -34,7 +35,7 @@
         if ($stmt->execute() && $stmt->rowCount() > 0) {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        ?>
+        //Table header for display?>
 
         <table>
             <thead>
@@ -60,7 +61,7 @@
              */            
             ?>
             
-            <?php foreach ($results as $row): ?>
+            <?php foreach ($results as $row): //loop to display information from the database table accessed?>
                 <tr>
                     <td><?php echo $row['firstname']; ?></td>
                     <td><?php echo $row['lastname']; ?></td>

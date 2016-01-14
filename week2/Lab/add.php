@@ -5,6 +5,7 @@
         <title></title>
     </head>
     <body>
+        <a href="view.php">Click here to view the actors in the database!</a>
         <?php
         include './db-connect.php';
         include './functions.php';
