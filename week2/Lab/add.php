@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-        include './db-connect.php';
+        include './dbconnect.php';
         include './functions.php';
 
         $results = '';
@@ -39,13 +39,11 @@
         <h1><?php echo $results; ?></h1>
 
         <form method="post" action="#">            
-            Actor's first name <input type="text" value="" name="firstname" />
+            Data one <input type="text" value="" name="dataone" />
             <br />
-            Actor's last name <input type="text" value="" name="lastname" />
+            Data two <input type="text" value="" name="datatwo" />
             <br />
-            Actor's DOB <input type="date" value="" name="dob" />
-            <br />
-            Actor's Height <input type="text" value="" name="height" />
+            Date <input type="date" value="" name="date" />
             <br />
 
             <input type="submit" value="Submit" />

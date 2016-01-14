@@ -37,7 +37,23 @@
              //var_dump($results);            
              print_r($results);            
          }
-        
+         
+         //echo  $results[0]['datatwo'];
+         
+        $value = $results[0];
+         foreach ($results as $key => $value) {
+               echo $value['dataone'];
+         } 
+    
+
         ?>
+        
+        <ul> 
+            <?php foreach ($results as $key => $value): ?>
+            <li>
+                <?php echo $value['dataone']; ?>
+            </li>
+            <?php endforeach;?>
+        </ul>
     </body>
 </html>
