@@ -46,16 +46,21 @@
         
         <!--form for inputing data for create -->
         <form method="post" action="#">
-            Corps<input type="text" name="corp" />
+            Corporation<br><input type="text" name="corp" />
             <br />
-            Email<input type="text" name="email" />
-            <br />  
-            Zip code<input type="text" name="zipcode" />
+            <br>
+            Email<br><input type="text" name="email" />
+            <br /> 
+            <br>
+            Zip code<br><input type="text" name="zipcode" />
             <br />
-            Owner<input type="text" name="owner" />
+            <br>
+            Owner<br><input type="text" name="owner" />
             <br />
-            Phone<input type="text" name="phone" />
+            <br>
+            Phone<br><input type="text" name="phone" />
             <br />
+            <br>
             <input type="submit" value="Create" />
         </form>
         

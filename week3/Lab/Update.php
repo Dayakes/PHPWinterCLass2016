@@ -69,18 +69,24 @@
         
         <?php//form for inputing data for update ?>
         <form method="post" action="#">
-            Corps<input type="text" value="<?php echo $corp; ?>" name="corp" />
+            Corporation<br><input type="text" value="<?php echo $corp; ?>" name="corp" />
             <br />
-            Incorporation date<input type="date" value="<?php echo $date; ?>" name="incorp_dt"/>
+            <br>
+            Incorporation date<br><input type="date" value="<?php echo $date; ?>" name="incorp_dt"/>
             <br />
-            Email<input type="text" value="<?php echo $email; ?>" name="email" />
+            <br>
+            Email<br><input type="text" value="<?php echo $email; ?>" name="email" />
             <br />  
-            Zip code<input type="text" value="<?php echo $zipcode; ?>" name="zipcode" />
+            <br>
+            Zip code<br><input type="text" value="<?php echo $zipcode; ?>" name="zipcode" />
             <br />
-            Owner<input type="text" value="<?php echo $owner; ?>" name="owner" />
+            <br>
+            Owner<br><input type="text" value="<?php echo $owner; ?>" name="owner" />
             <br />
-            Phone<input type="text" value="<?php echo $phone; ?>" name="phone" />
+            <br>
+            Phone<br><input type="text" value="<?php echo $phone; ?>" name="phone" />
             <br />
+            <br>
             <input type="hidden" value="<?php echo $id; ?>" name="id" /> 
             <input type="submit" value="Update" />
         </form>
