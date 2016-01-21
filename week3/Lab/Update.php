@@ -14,6 +14,7 @@
             $db = dbconnect();
             
             $result = '';
+            //if it is a post request then set the variable accordingly
             if (isPostRequest()) {
                 $id = filter_input(INPUT_POST, 'id');
                 $corp = filter_input(INPUT_POST, 'corp');
@@ -23,9 +24,9 @@
                 $owner = filter_input(INPUT_POST, 'owner');
                 $phone = filter_input(INPUT_POST, 'phone');
                 
-                
+                //the sql statement
                 $stmt = $db->prepare("UPDATE corps set corp = :corp, incorp_dt = :incorp_dt, email = :email, zipcode = :zipcode, owner = :owner, phone = :phone where id = :id");
-                
+                //binds for the sql statement
                 $binds = array(
                     ":id" => $id,
                     ":incorp_dt" => $date,
@@ -39,6 +40,7 @@
                 if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
                    $result = 'Record updated';
                 }
+                //if it is not a post request then get the id and display what data matches with that id
             } else {
                 $id = filter_input(INPUT_GET, 'id');
                 $stmt = $db->prepare("SELECT * FROM corps where id = :id");
@@ -83,6 +85,7 @@
             <input type="submit" value="Update" />
         </form>
         
+        <?php //link back to the view page?>
         <p> <a href="view.php">View page</a></p>
         
     </body>

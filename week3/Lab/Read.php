@@ -29,6 +29,8 @@
             $zipcode = $results['zipcode'];
             $owner = $results['owner'];
             $phone = $results['phone'];
+            
+            //table to display the data that has been retrieved
             ?>
         <table class="table table-striped">
             <tr>
@@ -36,7 +38,7 @@
                 <td><?php echo $corp;?></td>
             </tr>
             <tr>
-                <td>Date Updated</td>
+                <td>Date Incorporated:</td>
                 <td><?php echo  date("F j, Y, g:i a",strtotime($results['incorp_dt'])); ?></td>
             </tr>
             <tr>
@@ -57,6 +59,7 @@
             </tr>
         </table>
         <br />
+        <!--link back to the view page-->
         <p> <a href="view.php">View page</a></p>
                 
                 

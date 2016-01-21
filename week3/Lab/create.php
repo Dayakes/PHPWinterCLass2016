@@ -14,6 +14,7 @@
             $db = dbconnect();
             
             $result = '';
+            //if it is a post request then set the variable accordingly
             if (isPostRequest()) {
                 $corp = filter_input(INPUT_POST, 'corp');
                 $email = filter_input(INPUT_POST, 'email');
@@ -21,9 +22,9 @@
                 $owner = filter_input(INPUT_POST, 'owner');
                 $phone = filter_input(INPUT_POST, 'phone');
                 
-                
+                //the sql statement
                 $stmt = $db->prepare("INSERT INTO corps set corp = :corp, incorp_dt = now(), email = :email, zipcode = :zipcode, owner = :owner, phone = :phone");
-                
+                //binds for the sql statement
                 $binds = array(
                     ":corp" => $corp,
                     ":email" => $email,
@@ -31,7 +32,7 @@
                     ":owner" => $owner,
                     ":phone" => $phone
                 );
-                
+                //confirmation that the record was added successfully
                 if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
                    $result = 'Record Added';
                 }
@@ -43,7 +44,7 @@
         
 
         
-        <?php//form for inputing data for create ?>
+        <!--form for inputing data for create -->
         <form method="post" action="#">
             Corps<input type="text" name="corp" />
             <br />
