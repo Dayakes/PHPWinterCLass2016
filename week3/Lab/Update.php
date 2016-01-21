@@ -24,10 +24,11 @@
                 $phone = filter_input(INPUT_POST, 'phone');
                 
                 
-                $stmt = $db->prepare("UPDATE corps set corp = :corp, incorp_dt = now(), email = :email, zipcode = :zipcode, owner = :owner, phone = :phone where id = :id");
+                $stmt = $db->prepare("UPDATE corps set corp = :corp, incorp_dt = :incorp_dt, email = :email, zipcode = :zipcode, owner = :owner, phone = :phone where id = :id");
                 
                 $binds = array(
                     ":id" => $id,
+                    ":incorp_dt" => $date,
                     ":corp" => $corp,
                     ":email" => $email,
                     ":zipcode" => $zipcode,
@@ -51,6 +52,7 @@
                     die('Record not found');
                 }
                 $corp = $results['corp'];
+                $date = $results['incorp_dt'];
                 $email = $results['email'];
                 $zipcode = $results['zipcode'];
                 $owner = $results['owner'];
@@ -66,6 +68,8 @@
         <?php//form for inputing data for update ?>
         <form method="post" action="#">
             Corps<input type="text" value="<?php echo $corp; ?>" name="corp" />
+            <br />
+            Incorporation date<input type="date" value="<?php echo $date; ?>" name="incorp_dt"/>
             <br />
             Email<input type="text" value="<?php echo $email; ?>" name="email" />
             <br />  
