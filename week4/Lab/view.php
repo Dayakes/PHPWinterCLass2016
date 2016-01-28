@@ -18,7 +18,7 @@
         include_once './dbconnect.php';
         include './form1.php';
         include './form2.php';
-        include_once './functions.php';
+        
 
         $action = filter_input(INPUT_GET, 'action');
         //form 2 variables
@@ -29,7 +29,7 @@
         $radiosel = filter_input(INPUT_GET, 'sorting');
 
 
-
+            //if statements to determine which option was selected
         if ($action == "sort") {//connect and use sort function
             $results = sortcorps($dropsel, $radiosel);
         } else if ($action == "search") {//connect and use search function
@@ -41,11 +41,13 @@
             $results = array();
             if ($stmt->execute() && $stmt->rowCount() > 0) {
                 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                echo "Rows Found: ".$stmt->rowCount();
             }
         }
 
 
         //table to display data
+        
         ?>
         <table border="1" class="table table-striped">
             <thead>

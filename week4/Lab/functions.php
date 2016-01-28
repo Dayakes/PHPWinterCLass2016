@@ -31,6 +31,7 @@ function searchcorps($column, $search) {
     if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    echo "Rows Found: ".$stmt->rowCount();
     return $results;
 }
 
@@ -44,5 +45,6 @@ function sortcorps($dropsel, $radiosel) {
     if ($stmt->execute() && $stmt->rowCount() > 0) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    echo "Rows Found: ".$stmt->rowCount();
     return $results;
 }

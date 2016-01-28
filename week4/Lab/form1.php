@@ -1,7 +1,7 @@
 <form action="#" method="get">
     <fieldset>
         <?php
-
+        include_once './functions.php';
 
         $radiosel = "";
         $dropsel = "";
