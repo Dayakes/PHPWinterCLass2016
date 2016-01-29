@@ -19,7 +19,7 @@
         include './form1.php';
         include './form2.php';
         
-
+        
         $action = filter_input(INPUT_GET, 'action');
         //form 2 variables
         $dropsel2 = filter_input(INPUT_GET, 'groupby');
