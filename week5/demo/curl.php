@@ -10,10 +10,10 @@
          * http://php.net/manual/en/curl.examples.php
          * http://php.net/manual/en/curl.examples-basic.php
          */
-         // create curl resource 
+         // create curl resource initialize
         $curl = curl_init(); 
 
-        // set url 
+        // set url  
         curl_setopt($curl, CURLOPT_URL, "example.com"); 
 
         //return the transfer as a string 
