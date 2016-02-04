@@ -14,16 +14,34 @@ and open the template in the editor.
         include './Functions/until.php';
         include './Functions/dbconnect.php';
         
+        $url = filter_input(INPUT_POST, 'URL');
+        $isValid = true;
         
-        if(isPostRequest())
-            {
-        }
-        
-        
+        if (isPostRequest()) {
+                if ( filter_var($url, FILTER_VALIDATE_URL) === false  ) {
+                    $isValid = false;
+                    echo "Invalid URL";
+                    
+                }
+                
+                if ($isValid) {
+                    include './curl.php';
+                    include './regex_match.php';
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    $url = '';
+                }
+            }
+               
         ?>
         <form action="#" method="post">
         <Label>Please enter a URL:</label>
-        <input type="text" name="URL"></text>
+        <input type="text" name="URL" value="<?php echo $url; ?>"></text>
         <input type="submit" value="Submit">
         
     </body>
