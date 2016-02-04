@@ -17,10 +17,10 @@
         
             preg_match_all($URLRegex, $output, $URLMatches);
             
-            print_r($URLMatches[0]);
-            echo '<hr />';
-            $removeDuplicates = array_unique($URLMatches[0]);
-            print_r($removeDuplicates);
+            //print_r($URLMatches[0]);
+            //echo '<hr />';
+            $links = array_unique($URLMatches[0]);
+            //print_r($removeDuplicates);
         
         ?>
     </body>
