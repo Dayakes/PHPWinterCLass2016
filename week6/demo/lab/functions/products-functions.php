@@ -38,7 +38,7 @@ function isValidProduct($value) {
     return true;    
 }
 function isValidPrice($value) {
-    if ( empty($value) && is_numeric($value) ) {
+    if ( empty($value) ) {
         return false;
     }
     return true;

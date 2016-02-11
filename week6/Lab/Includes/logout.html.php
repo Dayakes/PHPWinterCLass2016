@@ -10,8 +10,19 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+
         <?php
-        // put your code here
+        if ( isset($_SESSION['isValidUser']) &&
+        $_SESSION['isValidUser'] === true ) {
+   echo '<a href="?logout=1">Logout</a>';
+}
+    $logout = filter_input(INPUT_GET, 'logout');
+   
+    if ( $logout == 1 ) {
+       $_SESSION['isValidUser'] = false;
+    }
+
+
         ?>
     </body>
 </html>

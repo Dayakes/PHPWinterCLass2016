@@ -3,56 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-        
-        
     </head>
     <body>
         <?php
-        
-           include_once './dbconnect.php';
-            
-           $db = dbconnect();
-           
-           $stmt = $db->prepare("SELECT * FROM corps");
-           
-            $results = array();
-            if ($stmt->execute() && $stmt->rowCount() > 0) {
-                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        include_once '../Includes/logout.html.php';
+        require_once '../includes/session-start.req-inc.php';
+
+        include_once '../functions/dbconnect.php';
+        include_once '../functions/login-function.php';
+        include_once '../functions/utils-function.php';
+
+        if (isPostRequest()) {
+
+            $email = filter_input(INPUT_POST, 'email');
+            $password = filter_input(INPUT_POST, 'pass');
+
+            if (isValidUser($email, $password)) {
+                $_SESSION['isValidUser'] = true;
+            } else {
+                $results = 'Sorry please try again';
             }
-            
+        }
+
+
+        if (isset($_SESSION['isValidUser']) && $_SESSION['isValidUser'] === true) {
+            include '../includes/admin-links.html.php';
+        }
         ?>
-        
-        
-        <table border="1" class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Company Name</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach ($results as $row): ?>
-                <tr>
-                    <td><?php echo $row['corp']; ?></td>
-                    <td><a class="btn btn-danger" href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
-                    <td><a class="btn btn-primary" href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>
-                    <td><a class="btn btn-warning" href="read.php?id=<?php echo $row['id']; ?>">Read</a></td>
-                </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
-           
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  
+
+        <?php include '../includes/results.html.php'; ?>
+
+        <?php include '../includes/loginform.html.php'; ?>
     </body>
 </html>

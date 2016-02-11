@@ -7,8 +7,8 @@
 function dbconnect() {
     $config = array(
         'DB_DNS' => 'mysql:host=localhost;port=3306;dbname=PHPClassWinter2016',
-        'DB_USER' => 'php',
-        'DB_PASSWORD' => 'winter16'
+        'DB_USER' => 'root',
+        'DB_PASSWORD' => ''
     );
 
     try {
@@ -20,6 +20,8 @@ function dbconnect() {
         /* If the connection fails we will close the 
          * connection by setting the variable to null */
         $db = null;
+        $message = $ex->getMessage();        
+        exit('Error with the Database - ' . $message);
     }
 
     return $db;
