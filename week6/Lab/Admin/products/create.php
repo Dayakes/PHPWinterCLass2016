@@ -5,7 +5,7 @@
         <title></title>
     </head>
     <body>
-        <a href=index.php>Back to view page</a>
+        <h2><a href=index.php>Back to view page</a></h2>
         <?php
         // put your code here
          require_once '../../includes/session-start.req-inc.php';

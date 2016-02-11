@@ -5,6 +5,7 @@
         <title></title>
     </head>
     <body>
+        <h2><a href=index.php>Back to view page</a></h2>
         <?php
         /*
          * get and hold a database connection 

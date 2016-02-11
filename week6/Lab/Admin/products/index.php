@@ -13,8 +13,8 @@
         require_once '../../includes/session-start.req-inc.php';
         require_once '../../includes/access-required.html.php';
         ?>
-        <a href="../index.php">Back to selection screen</a>
-        <p><a href="create.php">Create</a></p>
+        <h2><a href="../index.php">Back to selection screen</a></h2>
+        <h2><a href="create.php">Create new product</a></h2>
         <?php
         include_once '../../Functions/dbconnect.php';
 
