@@ -5,13 +5,14 @@
         <title></title>
     </head>
     <body>
+        <a href="checkout.php">Checkout</a>
         <?php
             require_once '../includes/session-start.req-inc.php';
-            require_once '../functions/cart-functions.php';
-            require_once '../functions/dbconnect.php';
+            require_once '../Functions/cart-functions.php';
+            require_once '../Functions/dbconnect.php';
             require_once '../Functions/utils-function.php';
-            require_once '../functions/category-functions.php';
-            require_once '../functions/products-functions.php';
+            require_once '../Functions/category-functions.php';
+            require_once '../Functions/products-functions.php';
                         
             startCart();            
             
