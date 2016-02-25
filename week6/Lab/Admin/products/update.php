@@ -10,7 +10,7 @@
         <?php
         include '../../Functions/dbconnect.php';
         include '../../Functions/utils-function.php';
-
+        
         $db = dbconnect();
 
         $result = '';
@@ -62,6 +62,7 @@
             Price<br><input type="text" value="<?php echo $price; ?>" name="price" />
             <br>
             <br>
+            Img<?php include_once './upload-form.php';?>
             <input type="hidden" value="<?php echo $id; ?>" name="id" /> 
             <input type="submit" value="Update" />
         </form>

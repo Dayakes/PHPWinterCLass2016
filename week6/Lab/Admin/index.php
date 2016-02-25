@@ -5,8 +5,10 @@
         <title></title>
     </head>
     <body>
+        
+
         <?php
-        include_once '../Includes/logout.html.php';
+        
         require_once '../includes/session-start.req-inc.php';
 
         include_once '../functions/dbconnect.php';
@@ -30,9 +32,12 @@
             include '../includes/admin-links.html.php';
         }
         ?>
-
+        
         <?php include '../includes/results.html.php'; ?>
 
         <?php include '../includes/loginform.html.php'; ?>
+        <br>
+        <?php include_once '../Includes/logout.html.php'; ?>
+        
     </body>
 </html>
