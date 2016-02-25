@@ -44,10 +44,10 @@ function uploadImage($fieldName){
     }
     
     $fileName =  sha1_file($_FILES[$fieldName]['tmp_name']); 
-    $location = sprintf('./uploads/%s.%s', $fileName, $ext); 
+    $location = sprintf('./images/%s.%s', $fileName, $ext); 
     
-    if (!is_dir('./uploads')) {
-        mkdir('./uploads');
+    if (!is_dir('./images')) {
+        mkdir('./images');
     }
         
     if ( !move_uploaded_file( $_FILES[$fieldName]['tmp_name'], $location) ) {

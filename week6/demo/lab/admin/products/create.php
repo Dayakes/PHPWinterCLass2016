@@ -13,7 +13,7 @@
         include_once '../../functions/dbconnect.php';
         include_once '../../functions/category-functions.php';
         include_once '../../functions/products-functions.php';
-        include_once '../../functions/utils-function.php';
+        include_once '../../functions/until.php';
         
         
         
@@ -26,7 +26,13 @@
             $category_id = filter_input(INPUT_POST, 'category_id');
             $product = filter_input(INPUT_POST, 'product');
             $price = filter_input(INPUT_POST, 'price');
-            $image = filter_input(INPUT_POST, 'image');
+            
+            try{
+                $image = uploadImage('upfile');
+            } catch (RuntimeException $ex) {
+                $image = '';
+            }
+            
                         
             $errors = array();
             
@@ -36,6 +42,10 @@
             
             if ( !isValidPrice($price) ) {
                 $errors[] = 'Price is not Valid';
+            }
+                        
+            if ( empty($image) ) {
+                $errors[] = 'image could not be uploaded';
             }
             
             if ( count($errors) == 0 ) {
@@ -67,7 +77,7 @@
         
         <?php include '../../includes/results.html.php'; ?>
                
-        <form method="post" action="#">
+        <form method="post" action="#" enctype="multipart/form-data">
             
             Category:
             <select name="category_id">
@@ -83,8 +93,13 @@
             Product Name : <input type="text" name="product" value="" /> 
             <br />
             Price : <input type="text" name="price" value="" /> 
-            <br />
+            <br />            
+             Image: <input name="upfile" type="file" />
+             <br />
             <input type="submit" value="Submit" />
         </form>
+        
+        
+        
     </body>
 </html>

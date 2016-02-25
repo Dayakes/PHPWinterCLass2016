@@ -29,6 +29,7 @@
         $category_id = $results['category_id'];
         $product = $results['product'];
         $price = $results['price'];
+        $image = $results['image'];
 
         //table to display the data that has been retrieved
         ?>
@@ -48,6 +49,10 @@
             <tr>
                 <td>Price:</td>
                 <td><?php echo $price; ?></td>
+            </tr>
+            <tr>
+                <td>Image:</td>
+                <td><img src="./images/<?php echo $image; ?>" /></td>
             </tr>
         </table>
         <br />

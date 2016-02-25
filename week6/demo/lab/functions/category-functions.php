@@ -1,12 +1,8 @@
 <?php
 
-/* 
- *-categories
- * category_id
- * category
- */
-
-
+//categories
+//category_id
+    //category
 function createCategory($value) {
     $db = dbconnect();
     $stmt = $db->prepare("INSERT INTO categories SET category = :category");

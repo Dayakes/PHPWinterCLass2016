@@ -8,8 +8,9 @@
     <body>
         <h2><a href=index.php>Back to view page</a></h2>
         <?php
-        include '../../Functions/dbconnect.php';
         include '../../Functions/utils-function.php';
+        include '../../Functions/dbconnect.php';
+        
         
         $db = dbconnect();
 
@@ -21,12 +22,13 @@
             $id = filter_input(INPUT_POST, 'id');
 
             //the sql statement
-            $stmt = $db->prepare("UPDATE products set product = :product, price = :price where product_id = :id");
+            $stmt = $db->prepare("UPDATE products set product = :product, price = :price, image = :image where product_id = :id");
             //binds for the sql statement
             $binds = array(
                 ":product" => $product,
                 ":price" => $price,
-                ":id" => $id
+                ":id" => $id,
+                ":image" => $image
             );
 
             if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
@@ -47,6 +49,7 @@
             }
             $product = $results['product'];
             $price = $results['price'];
+            $image = $results['image'];
         }
         ?>
 
@@ -62,7 +65,8 @@
             Price<br><input type="text" value="<?php echo $price; ?>" name="price" />
             <br>
             <br>
-            Img<?php include_once './upload-form.php';?>
+            Img<br><img src="./images/<?php echo $image; ?>" />
+                <br><?php include_once './upload-form.php';?>
             <input type="hidden" value="<?php echo $id; ?>" name="id" /> 
             <input type="submit" value="Update" />
         </form>

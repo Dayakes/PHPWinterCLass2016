@@ -5,13 +5,13 @@
         <title></title>
     </head>
     <body>
-       <?php
+        <?php
         
             require_once '../includes/session-start.req-inc.php';
             
             include_once '../functions/dbconnect.php';
             include_once '../functions/login-function.php';
-            include_once '../functions/utils-function.php';
+            include_once '../functions/until.php';
         
             if ( isPostRequest() ) {
                 
@@ -36,5 +36,6 @@
         <?php include '../includes/results.html.php'; ?>
         
         <?php include '../includes/loginform.html.php'; ?>
+        
     </body>
 </html>

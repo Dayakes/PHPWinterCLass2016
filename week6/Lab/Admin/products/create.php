@@ -27,7 +27,6 @@
             $category_id = filter_input(INPUT_POST, 'category_id');
             $product = filter_input(INPUT_POST, 'product');
             $price = filter_input(INPUT_POST, 'price');
-            $image = filter_input(INPUT_POST, 'image');
                         
             $errors = array();
             
@@ -41,7 +40,7 @@
             
             if ( count($errors) == 0 ) {
                 
-                if ( createProduct($category_id, $product, $price, $image ) ) {
+                if ( createProduct($category_id, $product, $price, $fileName ) ) {
                     $results = 'Product Added';
                 } else {
                     $results = 'Product was not Added';
@@ -79,6 +78,7 @@
             <br />
             Price : <input type="text" name="price" value="" /> 
             <br />
+            Image : <?php include './upload-form.php';?>
             <input type="submit" value="Submit" />
         </form>
     </body>

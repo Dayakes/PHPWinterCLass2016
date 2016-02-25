@@ -8,19 +8,15 @@
 
         <?php
         include '../../Functions/upload-function.php';
-        include '../../Functions/utils-function.php';
-        try
-        {
-        if(isPostRequest())
-        {
-        $fileName = uploadImage('upfile');
-        echo $fileName;
-        }
+        try {
+            if (isPostRequest()) {
+                $fileName = uploadImage('upfile');
+                //echo $fileName;
+            }
         } catch (RuntimeException $e) {
 
-    echo $e->getMessage();
-
-}
+            echo $e->getMessage();
+        }
         ?>
 
 
@@ -29,11 +25,9 @@
             <!-- MAX_FILE_SIZE must precede the file input field -->
             <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
             <!-- Name of input element determines name in $_FILES array -->
-            Send this file: <input name="upfile" type="file" />
-            <input type="submit" value="Send File" />
+            <input name="upfile" type="file" />
+            <input type="submit" value="Update" />
         </form>
 
-        <!-- display imaged
-        <img src="uploads/30420d1a9afb2bcb60335812569af4435a59ce17.jpg" /> -->
     </body>
 </html>

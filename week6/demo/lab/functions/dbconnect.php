@@ -20,8 +20,9 @@ function dbconnect() {
         /* If the connection fails we will close the 
          * connection by setting the variable to null */
         $db = null;
-        $message = $ex->getMessage();        
-        exit('Error with the Database - ' . $message);
+        $message = $ex->getMessage();
+        include './includes/error.php';
+        exit();
     }
 
     return $db;
