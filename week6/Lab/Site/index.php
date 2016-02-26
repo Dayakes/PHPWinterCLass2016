@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <meta charset="UTF-8">
         <title></title>
     </head>
     <body>
-        <a href="checkout.php">Checkout</a>
+        <h2><a href="checkout.php">Checkout</a></h2>
         <?php
             require_once '../includes/session-start.req-inc.php';
             require_once '../Functions/cart-functions.php';

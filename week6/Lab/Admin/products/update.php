@@ -10,8 +10,7 @@
         <?php
         include '../../Functions/utils-function.php';
         include '../../Functions/dbconnect.php';
-        
-        
+
         $db = dbconnect();
 
         $result = '';
@@ -20,6 +19,14 @@
             $product = filter_input(INPUT_POST, 'product');
             $price = filter_input(INPUT_POST, 'price');
             $id = filter_input(INPUT_POST, 'id');
+            include '../../Functions/upload-function.php';
+            try {
+                $imageSend = filter_input(INPUT_POST, 'upfile');
+                $image = uploadImage($imageSend);
+            } catch (Exception $ex) {
+                echo $ex->getMessage();
+            }
+
 
             //the sql statement
             $stmt = $db->prepare("UPDATE products set product = :product, price = :price, image = :image where product_id = :id");
@@ -57,7 +64,7 @@
 
 
 
-        <?php //form for inputing data for update  ?>
+        <?php //form for inputing data for update   ?>
         <form method="post" action="#">
             Product<br><input type="text" value="<?php echo $product; ?>" name="product" />
             <br />
@@ -66,12 +73,13 @@
             <br>
             <br>
             Img<br><img src="./images/<?php echo $image; ?>" />
-                <br><?php include_once './upload-form.php';?>
+            <input name="upfile" type="file" />
+            <br />
             <input type="hidden" value="<?php echo $id; ?>" name="id" /> 
             <input type="submit" value="Update" />
         </form>
 
-        <?php //link back to the view page ?>
+        <?php //link back to the view page  ?>
 
     </body>
 </html>

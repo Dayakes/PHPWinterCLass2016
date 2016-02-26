@@ -2,7 +2,7 @@
 
 <?php if ( isset($allProducts) && count($allProducts) > 0 ) : ?>
 
-<table>
+<table class="table table-striped" style="width:50%;">
 
     <?php foreach ($allProducts as $row): ?>
         <tr>
@@ -10,7 +10,7 @@
                 <?php if ( empty($row['image']) ) : ?>
                     No Image
                 <?php else: ?>
-                    <img src="../images/<?php echo $row['image']; ?>" width="100" height="100" />
+                    <img src="../Admin/products/images/<?php echo $row['image']; ?>" width="100" height="100" />
                 <?php endif; ?>
             </td>
             <td><?php echo $row['product']; ?></td>

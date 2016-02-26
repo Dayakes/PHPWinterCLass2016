@@ -10,14 +10,13 @@
     <body>
 
         <?php
-        
         require_once '../../includes/session-start.req-inc.php';
         require_once '../../includes/access-required.html.php';
         ?>
         <?php //links to the other pages ?>
         <h2><a href="../index.php">Back to selection screen</a></h2>
         <h2><a href="create.php">Create new category</a></h2>
-        
+
         <?php
         include_once '../../Functions/dbconnect.php';
 
@@ -27,7 +26,7 @@
         $results = array();
         if ($stmt->execute() && $stmt->rowCount() > 0) {
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo "<h3>Rows Found: " . $stmt->rowCount()."</h3>";
+            echo "<h3>Rows Found: " . $stmt->rowCount() . "</h3>";
         }
         ?>
         <table border="1" class="table table-striped">

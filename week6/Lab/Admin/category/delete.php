@@ -35,9 +35,9 @@
         <h1> Record <?php echo $id; ?>
             <?php if (!$isDeleted): ?> 
                 Not Deleted, Please make sure you have first deleted any products associated with this category!
-            <?php else :?>
-            Deleted </h1>
-            <?php endif; ?>
+            <?php else : ?>
+                Deleted </h1>
+        <?php endif; ?>
 
 
     </body>

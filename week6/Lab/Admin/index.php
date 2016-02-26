@@ -5,6 +5,7 @@
         <title></title>
     </head>
     <body>
+        <a href="../index.php">Return to main menu</a>
         
 
         <?php
