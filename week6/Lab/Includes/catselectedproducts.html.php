@@ -5,6 +5,7 @@
 <table class="table table-striped" style="width:50%;">
 
     <?php foreach ($allProducts as $row): ?>
+    <?php if($row['category_id'] == $categorySelected) :?>
     <tr>
         <td>
             <?php if ( empty($row['image']) ) : ?>
@@ -24,6 +25,7 @@
         </td>
 
     </tr>    
+    <?php endif; ?>
     <?php endforeach; ?>   
 
 </table>

@@ -8,6 +8,7 @@
     <body>
         <h2><a href=index.php>Back to view page</a></h2>
         <?php
+        //include functions
         include '../../Functions/utils-function.php';
         include '../../Functions/dbconnect.php';
 
@@ -23,6 +24,7 @@
             try {
                 $imageSend = filter_input(INPUT_POST, 'upfile');
                 $image = uploadImage($imageSend);
+                echo $image;
             } catch (Exception $ex) {
                 echo $ex->getMessage();
             }
@@ -30,6 +32,7 @@
 
             //the sql statement
             $stmt = $db->prepare("UPDATE products set product = :product, price = :price, image = :image where product_id = :id");
+            
             //binds for the sql statement
             $binds = array(
                 ":product" => $product,

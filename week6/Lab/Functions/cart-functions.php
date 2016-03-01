@@ -24,4 +24,8 @@ function getCartCount() {
     return count($_SESSION['cart']);
 }
 
+//function removeqsvar($url, $varname) {
+//    return preg_replace('/([?&])'.$varname.'=[^&]+(&|$)/','$1',$url);
+//}
+
 

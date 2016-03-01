@@ -32,7 +32,15 @@
                   
            
             include_once '../includes/categories.html.php';
+            
+            if(!isset($categorySelected))
+            {
             include_once '../includes/products.html.php';
+            }
+            else
+            {
+                include_once '../Includes/catselectedproducts.html.php';
+            }
             
             
             

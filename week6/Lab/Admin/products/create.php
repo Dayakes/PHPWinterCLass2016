@@ -7,7 +7,7 @@
     <body>
         <h2><a href=index.php>Back to view page</a></h2>
         <?php
-        // put your code here
+        // all of the includes and requires
         require_once '../../includes/session-start.req-inc.php';
         require_once '../../includes/access-required.html.php';
 
@@ -19,10 +19,10 @@
 
 
 
-
+        //get all categories and store in into the variable
         $categories = getAllCategories();
 
-
+        //if it is a post request then run the create information for the category
         if (isPostRequest()) {
 
             $category_id = filter_input(INPUT_POST, 'category_id');
