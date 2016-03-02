@@ -6,6 +6,7 @@
         <title></title>
     </head>
     <body>
+        <p><a href="../index.php">Main Menu</a></p>
         <h2><a href="checkout.php">Checkout</a></h2>
         <?php
             require_once '../includes/session-start.req-inc.php';
