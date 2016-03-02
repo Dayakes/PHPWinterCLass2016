@@ -1,11 +1,13 @@
 
 <?php if (isset($checkoutProducts) && count($checkoutProducts) > 0) : ?>
     <table class="table table-striped" style="width:30%;">
-
+        <th>Product</th>
+        <th>Price</th>
         <?php foreach ($checkoutProducts as $row): ?>
             <tr>            
                 <td><?php echo $row['product']; ?></td>
                 <td><?php echo $row['price']; ?></td>
+                <td><img src="../Admin/products/images/<?php echo $row['image']; ?>" width="100" height="100" /></td>
             </tr>    
         <?php endforeach; ?>   
         <tr>            

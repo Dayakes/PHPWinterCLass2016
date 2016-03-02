@@ -20,13 +20,14 @@
             $product = filter_input(INPUT_POST, 'product');
             $price = filter_input(INPUT_POST, 'price');
             $id = filter_input(INPUT_POST, 'id');
+            $oldimage = filter_input(INPUT_POST, 'oldimage');
+            
             include '../../Functions/upload-function.php';
             try {
-                $imageSend = filter_input(INPUT_POST, 'upfile');
-                $image = uploadImage($imageSend);
-                echo $image;
-            } catch (Exception $ex) {
+                $image = uploadImage('upfile');
+            } catch (RuntimeException $ex) {
                 echo $ex->getMessage();
+                $image = $oldimage;
             }
 
 
@@ -68,7 +69,7 @@
 
 
         <?php //form for inputing data for update   ?>
-        <form method="post" action="#">
+        <form method="post" action="#" enctype="multipart/form-data">
             Product<br><input type="text" value="<?php echo $product; ?>" name="product" />
             <br />
             <br>
@@ -78,6 +79,7 @@
             Img<br><img src="./images/<?php echo $image; ?>" />
             <input name="upfile" type="file" />
             <br />
+            <input type="hidden" value="<?php echo $image; ?>" name="oldimage" />
             <input type="hidden" value="<?php echo $id; ?>" name="id" /> 
             <input type="submit" value="Update" />
         </form>

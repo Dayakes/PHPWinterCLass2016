@@ -24,7 +24,7 @@
 
             startCart();
 
-            $total = 0;
+            $total = 0.0;
 
             $checkoutProducts = array();
 
@@ -32,7 +32,8 @@
 
             foreach ($items as $id) {
                 $checkoutProducts[] = getProduct($id);
-                $total = getPrice($id);
+                $prices = getPrice($id);
+                $total = $total + $prices['price'];
             }
         }
 

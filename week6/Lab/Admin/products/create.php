@@ -32,6 +32,7 @@
             try {
                 $image = uploadImage('upfile');
             } catch (RuntimeException $ex) {
+                echo $ex->getMessage();
                 $image = '';
             }
 

@@ -56,7 +56,7 @@ function getProduct($id) {
 
 function getPrice($id) {
     $db = dbconnect();
-    $stmt = $db->prepare("SELECT price FROM products JOIN categories WHERE categories.category_id = products.category_id AND product_id = :product_id");
+    $stmt = $db->prepare("SELECT price FROM products WHERE product_id = :product_id");
     $binds = array(
         ":product_id" => $id
     );
