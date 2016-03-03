@@ -16,13 +16,15 @@
         $result = '';
         //if it is a post request then set the variable accordingly
         if (isPostRequest()) {
+            $id = filter_input(INPUT_GET, 'id');
             $category = filter_input(INPUT_POST, 'category');
 
             //the sql statement
-            $stmt = $db->prepare("UPDATE categories set category = :category");
+            $stmt = $db->prepare("UPDATE categories set category = :category WHERE category_id = :id");
             //binds for the sql statement
             $binds = array(
                 ":category" => $category,
+                ":id" => $id
             );
 
             if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
