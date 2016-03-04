@@ -31,21 +31,21 @@ function isValidUser($email, $pass) {
     return false;
 }
 
-function getUserID($email, $pass) {
-    
-}
-
 function SignUp($email, $pass) {
-    $db = dbconnect();
-    $stmt = $db->prepare("INSERT INTO users SET email = :email, password = :pass");
-    $pass = sha1($pass);
-    $binds = array(
-        ":email" => $email,
-        ":password" => $pass
-    );
-    if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
-        return true;
+    if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+        $error = "invalid email";
     } else {
-        return false;
+        $db = dbconnect();
+        $stmt = $db->prepare("INSERT INTO users SET email = :email, password = :pass");
+        $pass = sha1($pass);
+        $binds = array(
+            ":email" => $email,
+            ":pass" => $pass
+        );
+        if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

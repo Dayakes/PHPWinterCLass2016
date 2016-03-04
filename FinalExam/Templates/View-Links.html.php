@@ -10,21 +10,22 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <div style="Width:8%; 
-             height:150px; 
+        <div style="Width:100%; 
+             height:42px; 
              border:2px solid black;
              background-color: lightblue;">
-            <h3 style="text-align: center;">Navigation</h3>
-            <a href="?view=view">View</a> and search all addresses<br>
-            <a href="?view=add">Add</a> an address<br>
-            <a href="?view=edit">Edit/Delete</a> an address<br>
-            
+            <h3 style="text-align: center; margin:0px">Navigation</h3>
+            <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=view">View</a> and search all addresses</div>
+            <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=add">Add</a> an address</div>
+            <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=edit">Edit/Delete</a> an address</div>
+            <div style='border:1px solid black; width:24.53%;float:left;text-align: center;'>
             <?php
-            include '../logout.html.php';
+            include '../Templates/logout.html.php';
             if ($_SESSION['isValidUser'] === false) {
                 header('Location: ../index.php');
             }
             ?>
+            </div>
         </div>
     </body>
 </html>
