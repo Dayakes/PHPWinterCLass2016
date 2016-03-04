@@ -15,10 +15,10 @@ and open the template in the editor.
              border:2px solid black;
              background-color: lightblue;">
             <h3 style="text-align: center;">Navigation</h3>
-            <a href="?view=view">View</a> all addresses<br>
-            <a href="?view=delete">Delete</a> an address<br>
-            <a href="?view=search">Search</a> for an address<br>
+            <a href="?view=view">View</a> and search all addresses<br>
             <a href="?view=add">Add</a> an address<br>
+            <a href="?view=edit">Edit/Delete</a> an address<br>
+            
             <?php
             include '../logout.html.php';
             if ($_SESSION['isValidUser'] === false) {

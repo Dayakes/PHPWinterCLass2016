@@ -12,13 +12,20 @@ and open the template in the editor.
     <body>
         <?php
         require_once '../Templates/session-start.req-inc.php';
-        
+
         include '../Templates/View-Links.html.php';
         $view = filter_input(INPUT_GET, 'view');
-        
-        if($view === 'add'){
+        //view search add delete
+        if ($view === 'view') {
             
         }
+        if ($view === 'add') {
+            
+        }
+        if ($view === 'edit') {
+            
+        }
+        
         ?>
 
     </body>
