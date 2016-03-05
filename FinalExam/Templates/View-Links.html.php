@@ -11,14 +11,14 @@ and open the template in the editor.
     </head>
     <body>
         <div style="Width:100%; 
-             height:42px; 
+             height:50px; 
              border:2px solid black;
              background-color: lightblue;">
             <h3 style="text-align: center; margin:0px">Navigation</h3>
             <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=view">View</a> and search all addresses</div>
             <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=add">Add</a> an address</div>
             <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=edit">Edit/Delete</a> an address</div>
-            <div style='border:1px solid black; width:24.53%;float:left;text-align: center;'>
+            <div style='border:1px solid black; width:25%;float:left;text-align: center;'>
             <?php
             include '../Templates/logout.html.php';
             if ($_SESSION['isValidUser'] === false) {
