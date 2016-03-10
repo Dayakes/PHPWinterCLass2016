@@ -14,8 +14,6 @@
         ?> 
         <p>Not a member? Sign up <a href="Templates/Signup.html.php">here</a></p>
         <?php
-        
-        
         require './Functions/utils-function.php';
         require './Functions/dbconnect.php';
         require './Functions/login-function.php';
@@ -29,9 +27,7 @@
         ?>
 
         <?php
-        if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
-            header('Location: ./Admin/index.php');
-        } else if (isset($_SESSION['isValidUser']) && $_SESSION['isValidUser'] === true) {
+        if (isset($_SESSION['isValidUser']) && $_SESSION['isValidUser'] === true) {
             header('Location: ./Site/index.php');
         }
         ?>

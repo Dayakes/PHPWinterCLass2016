@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -29,8 +23,12 @@ and open the template in the editor.
         if ($view === 'add') {
             include './AddAddress.html.php';
         }
-        if ($view === 'edit') {
-            
+        if ($view === 'search') {
+            include '../Functions/dbconnect.php';
+            include '../Functions/search-functions.php';
+            include '../Functions/utils-function.php';
+            include './Search.html.php.php';
+            include './View-page.html.php';
         }
         ?>
 

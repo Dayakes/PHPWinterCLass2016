@@ -15,9 +15,9 @@ and open the template in the editor.
              border:2px solid black;
              background-color: lightblue;">
             <h3 style="text-align: center; margin:0px">Navigation</h3>
-            <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=view">View</a> and search all addresses</div>
+            <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=view">View</a> all addresses</div>
             <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=add">Add</a> an address</div>
-            <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=edit">Edit/Delete</a> an address</div>
+            <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=search">Search</a> for an address</div>
             <div style='border:1px solid black; width:25%;float:left;text-align: center;'>
             <?php
             include '../Templates/logout.html.php';

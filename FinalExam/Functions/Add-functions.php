@@ -18,6 +18,11 @@ function addToBook() {
     $phone = filter_input(INPUT_POST, 'phone');
     $website = filter_input(INPUT_POST, 'website');
     $birthday = filter_input(INPUT_POST, 'birthday');
+    
+    if(!isset($fullname) || !isset($email)|| !isset($address_group_id)|| !isset($address)|| !isset($phone))
+    {
+        return false;
+    }
 
     try {
         $image = uploadImage('upfile');
@@ -41,9 +46,9 @@ function addToBook() {
     );
     if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
         return true;
+    } else {
+        return false;
     }
-
-    return false;
 }
 
 function getGroups() {
