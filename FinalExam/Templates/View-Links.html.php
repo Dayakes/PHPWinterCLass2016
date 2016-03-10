@@ -8,17 +8,15 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link rel="stylesheet" href="../stylesheet.css">
     </head>
     <body>
-        <div style="Width:100%; 
-             height:50px; 
-             border:2px solid black;
-             background-color: lightblue;">
-            <h3 style="text-align: center; margin:0px">Navigation</h3>
-            <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=view">View</a> all addresses</div>
-            <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=add">Add</a> an address</div>
-            <div style='border:1px solid black; width:25%;float:left;text-align: center;'><a href="?view=search">Search</a> for an address</div>
-            <div style='border:1px solid black; width:25%;float:left;text-align: center;'>
+        <div class="view-link-background">
+            <h3 class="view-link-header">Navigation</h3>
+            <div class="view-link" ><a href="?view=view">View</a> all addresses</div>
+            <div class="view-link"><a href="?view=add">Add</a> an address</div>
+            <div class="view-link"><a href="?view=search">Search</a> for an address</div>
+            <div class="view-link">
             <?php
             include '../Templates/logout.html.php';
             if ($_SESSION['isValidUser'] === false) {

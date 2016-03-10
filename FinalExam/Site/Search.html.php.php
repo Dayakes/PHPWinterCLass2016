@@ -9,6 +9,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../stylesheet.css">
     </head>
     <body>
         <?php
@@ -30,7 +31,7 @@ and open the template in the editor.
         <div style="text-align: center;">
 
             <form method="post" action="#">
-                <div style="text-align: right;width:50%;float:left;border:1px solid black;text-align: center;">
+                <div class="search-form">
                     <h2>Please select what you want to search and enter your search term (search terms are case sensitive)</h2>
                     <b>Search</b><br>
                     <input type="radio" name="searchby" value="fullname"<?php
@@ -62,7 +63,7 @@ and open the template in the editor.
 
 
 
-                <div style="width:50%;height:166px;float:left;border:1px solid black;text-align: center;">
+                <div class="sort-form">
                     <h2>Please select what you want to sort your search by<br>
                     If none selected will search by Name</h2>
                     <b>Sort by</b><br>

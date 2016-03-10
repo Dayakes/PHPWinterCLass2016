@@ -3,7 +3,7 @@
 function searchAddress($searchby, $searchterm, $orderby) {
     $db = dbconnect();
 
-    $searchterm = "'"."%" . $searchterm . "%" . "'";
+    $searchterm = "%" . $searchterm . "%";
     
     $stmt = $db->prepare("SELECT * FROM address WHERE $searchby LIKE :searchterm ORDER BY $orderby");
     $binds = array(

@@ -39,6 +39,7 @@
         ?>
         <form method="post" action="#" enctype="multipart/form-data">
             * = required field<br>
+            
             *Group:<select name="address_group_id">
                 <?php foreach ($results as $row) : ?>
                     <option value="<?php echo $row['address_group_id']; ?>">
