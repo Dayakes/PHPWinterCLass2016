@@ -54,7 +54,7 @@ function uploadImage($fieldName){
         throw new RuntimeException('Failed to move uploaded file.');
     }
 
-    echo 'File is uploaded successfully.';
+    //echo 'File is uploaded successfully.';
     
     return $fileName.'.'.$ext;
 }
